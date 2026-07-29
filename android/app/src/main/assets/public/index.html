@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Engage" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="application-name" content="Engage" />
+  <meta name="description" content="Engage with your community - share photos, videos, stories, and connect with friends." />
+
+  <link rel="icon" type="image/svg+xml" href="/icons/icon-192.svg" />
+  <link rel="apple-touch-icon" href="/icons/icon-512.svg" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+  <title>Engage</title>
+
+  <!-- Inline CSS for instant loading splash -->
+  <style>
+    .engage-splash { position: fixed; inset: 0; z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #fafafa; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; transition: opacity 0.4s ease; }
+    @media (prefers-color-scheme: dark) { .engage-splash { background: #121212; } }
+    .engage-splash-logo { width: 48px; height: 48px; border-radius: 12px; background: #1a1a1a; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    @media (prefers-color-scheme: dark) { .engage-splash-logo { background: #fafafa; } }
+    .engage-splash-logo svg { width: 28px; height: 28px; stroke: #fafafa; fill: none; stroke-width: 1.5; stroke-linecap: round; }
+    @media (prefers-color-scheme: dark) { .engage-splash-logo svg { stroke: #121212; } }
+    .engage-splash-title { font-size: 18px; font-weight: 600; color: #1a1a1a; letter-spacing: -0.02em; margin-bottom: 24px; }
+    @media (prefers-color-scheme: dark) { .engage-splash-title { color: #fafafa; } }
+    .engage-splash-spinner { width: 20px; height: 20px; border: 2px solid #e5e5e5; border-top-color: #1a1a1a; border-radius: 50%; animation: engage-spin 0.8s linear infinite; }
+    @media (prefers-color-scheme: dark) { .engage-splash-spinner { border-color: #333; border-top-color: #fafafa; } }
+    @keyframes engage-spin { to { transform: rotate(360deg); } }
+  </style>
+
+  <script>
+    // Hide Freebuff dev toolbar overlay immediately
+    var hideToolbar = function() {
+      var el = document.querySelector('[aria-modal="true"][role="dialog"]');
+      if (el) { el.style.display = 'none'; }
+      var els = document.querySelectorAll('[style*="z-index: 99999"]');
+      els.forEach(function(e) { if (e.getAttribute('role') === 'dialog') e.style.display = 'none'; });
+    };
+    hideToolbar();
+    // Also watch for it being added dynamically
+    var observer = new MutationObserver(function() { hideToolbar(); });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    // Stop observing after 5 seconds
+    setTimeout(function() { observer.disconnect(); }, 5000);
+  </script>
+  <script type="module" crossorigin src="/assets/index-DBgC55Tk.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DY9IIHlx.css">
+</head>
+<body>
+  <div id="root">
+    <div class="engage-splash" id="engage-splash">
+      <div class="engage-splash-logo">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="10.5" r="2.5" fill="currentColor" stroke="none"/><path d="M5 14.5a5.5 5.5 0 1 1 1.5-3.8"/><path d="M19 14.5a5.5 5.5 0 1 0-1.5-3.8"/><path d="M12 20.5a5.5 5.5 0 1 1 0-10.5"/></svg>
+      </div>
+      <div class="engage-splash-title">Engage</div>
+      <div class="engage-splash-spinner"></div>
+    </div>
+  </div>
+</body>
+</html>

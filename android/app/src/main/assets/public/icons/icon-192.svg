@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="192" height="192" rx="36" fill="url(#bg)"/>
+  <!-- Connection nodes - three interconnected circles representing community -->
+  <g transform="translate(96,96)" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Orbits -->
+    <path d="M-28-8a28 28 0 1 1 8-20" stroke-width="3" opacity="0.8"/>
+    <path d="M28-8a28 28 0 1 0-8-20" stroke-width="3" opacity="0.8"/>
+    <path d="M0 44a28 28 0 1 1 0-52" stroke-width="3" opacity="0.8"/>
+  </g>
+  <g transform="translate(96,96)">
+    <!-- Center node -->
+    <circle cx="0" cy="-20" r="8" fill="#ffffff" stroke="none"/>
+    <!-- Orbiting nodes -->
+    <circle cx="-28" cy="18" r="6" fill="#ffffff" opacity="0.85" stroke="none"/>
+    <circle cx="28" cy="18" r="6" fill="#ffffff" opacity="0.85" stroke="none"/>
+  </g>
+</svg>

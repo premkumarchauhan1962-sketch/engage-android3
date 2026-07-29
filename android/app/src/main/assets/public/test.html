@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head><title>Test</title></head>
+<body style="background:#000; color:#fff; font-family:sans-serif; padding:40px;">
+  <h1>Test page works!</h1>
+  <p>If you can see this, the server is serving files correctly.</p>
+  <p>Timestamp: <span id="ts"></span></p>
+  <script>
+    document.getElementById('ts').textContent = new Date().toISOString();
+  </script>
+</body>
+</html>
